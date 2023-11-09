@@ -1,0 +1,104 @@
+1) ex001_anonymous_classes
+Оголошення анонімного класу
+https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html#declaring-anonymous-classes
+2) anonymous.ex002_anonymous_classes
+Анонімний клас не може отримати доступ до локальних змінних у своїй охоплюючій області видимості, які не оголошені як final або фактично final.
+https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html#accessing
+
+3)anonymous.ex003_anonymous_classes
+Метод недоступний, тому що він не імплементований
+
+4) nonymous.ex004_anonymous_classes
+https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html#accessing
+Як і локальні класи, анонімні класи можуть захоплювати змінні; вони мають однаковий доступ до локальних змінних охоплюючої області:
+
+Анонімний клас має доступ до членів свого охоплюючого класу.
+
+Анонімний клас не може отримати доступ до локальних змінних у своїй охоплюючій області видимості, які не оголошені як final або фактично final.
+
+5)anonymous.ex005_anonymous_classes, anonymous.ex006_anonymous_classes
+
+Зауважте, що в анонімних класах можна оголосити наступне:
+
+поля
+
+Додаткові методи (навіть якщо вони не реалізують жодних методів супертипу)
+
+Ініціалізатори екземплярів
+
+Місцеві заняття
+
+/////////////////////////
+Enums 
+////////////////////////
+
+1) enums.ex001_enumerations;
+https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+An enum type is a special data type that enables for a variable to be a set of predefined constants. The variable must be equal to one of the values that have been predefined for it. Common examples include compass directions (values of NORTH, SOUTH, EAST, and WEST) and the days of the week.
+2) enums.ex002_enumerations
+не можна перепризначати, тому що це константи
+
+
+3)enums.ex003_enumerations
+Конструктор повинен бути package-private or private access. Це автоматично створить constants, що є визначеним при починанні назви тіла.
+Ви не можете повідомити про відчуття конструктора yourself.
+https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+
+4)enums.ex004_abstract_methods
+
+Оголошення enum визначає клас (так званий тип enum). Тіло класу enum може містити методи та інші поля. Тому ми також можемо і перепризначати методи. The enum declaration defines a class (called an enum type). The enum class body can include methods and other fields.
+
+//////////////////////////
+Nested classes
+/////////////////////////
+
+1)ested_classes.ex001_nestedclasses
+https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html
+
+Вкладені класи поділяються на дві категорії: нестатичні та статичні. Нестатичні вкладені класи називаються внутрішніми класами. Вкладені класи, які оголошені статичними, називаються статичними вкладеними класами.
+
+2)nested_classes.ex002_nestedclasses
+https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html
+Екземпляр InnerClass може існувати лише в екземплярі OuterClass і має прямий доступ до методів і полів його примірника.
+
+3)nested_classes.ex003_nestedclasses
+https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html
+
+тут, мені здається, що йде посилення інкапсуляції
+Це спосіб логічного групування класів, які використовуються лише в одному місці: якщо клас корисний лише для одного іншого класу, тоді логічно вбудувати його в цей клас і тримати обидва разом. Вкладення таких «допоміжних класів» робить їхній пакет більш раціональним.
+
+Це збільшує інкапсуляцію: розглянемо два класи верхнього рівня, A і B, де B потрібен доступ до членів A, які інакше були б оголошені приватними. Приховавши клас B у класі A, члени A можуть бути оголошені приватними, а B матиме до них доступ. Крім того, сам B може бути прихований від зовнішнього світу.
+
+Це може призвести до більш читабельного та зручного для обслуговування коду: вкладення невеликих класів у класи верхнього рівня розміщує код ближче до місця, де він використовується.
+
+4)nested_classes.ex004_nestedclasses;  nested_classes.ex005_nestedclasses
+
+https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html
+
+Вкладений клас має доступ до всіх приватних членів класу, що його охоплює — як полів, так і методів. Тому публічний або захищений вкладений клас, успадкований підкласом, має непрямий доступ до всіх приватних членів суперкласу
+
+5)nested_classes.ex006_nestedclasses
+https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html
+Static nested classes do not have access to other members of the enclosing class. As a member of the OuterClass, a nested class can be declared private, public, protected, or package private. (Recall that outer classes can only be declared public or package private.)
+
+Статичний вкладений клас взаємодіє з членами екземпляра свого зовнішнього класу (та інших класів), як і будь-який інший клас верхнього рівня. По суті, статичний вкладений клас є поведінково класом верхнього рівня, який був вкладений в інший клас верхнього рівня для зручності упаковки. Приклад внутрішнього класу та вкладеного статичного класу також демонструє це.
+
+
+///////////////
+Statics
+//////////////
+
+1)static_members.ex001_static, tatic_members.ex002_static
+
+https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html
+
+Це досягається за допомогою модифікатора static. Поля, які мають у своєму оголошенні модифікатор static, називаються статичними полями або змінними класу. Вони пов'язані з класом, а не з будь-яким об'єктом. Кожен екземпляр класу спільно використовує змінну класу, яка знаходиться в одному фіксованому місці в пам’яті. Будь-який об’єкт може змінити значення змінної класу, але змінними класу також можна керувати без створення екземпляра класу
+
+2)static_members.ex003_static_blocks, static_members.ex004_static_blocks, ex005_constructors, ex006_abstract_class, ex007_static
+https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html
+Статичний блок ініціалізації — це звичайний блок коду, укладений у фігурні дужки { }, якому передує ключове слово static.
+Клас може мати будь-яку кількість статичних блоків ініціалізації, і вони можуть з’являтися будь-де в тілі класу. Система середовища виконання гарантує, що статичні блоки ініціалізації викликаються в тому порядку, в якому вони з’являються у вихідному коді.
+
+
+
+  
